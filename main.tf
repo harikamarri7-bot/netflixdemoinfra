@@ -8,10 +8,10 @@ variable "instance_names" {
 
 resource "aws_instance" "one" {
   count                  = length(var.instance_names)
-  ami                    = "ami-0a68bfeb2d7b29d39"  # ✅ Ubuntu Server 22.04 LTS (x86_64) for eu-north-1
-  instance_type          = "t3.micro"               # ✅ Common and supported in eu-north-1
-  key_name               = "jenkins"                # ensure this key pair exists in eu-north-1
-  vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"] # must belong to same region
+  ami                    = "ami-0866a3c8686eaeeba"  # ✅ Ubuntu Server 22.04 LTS (HVM), SSD Volume Type, eu-north-1
+  instance_type          = "t3.micro"
+  key_name               = "jenkins"
+  vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"]
 
   tags = {
     Name = var.instance_names[count.index]
