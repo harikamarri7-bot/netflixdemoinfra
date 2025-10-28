@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-3"
+  region = "eu-north-1"
 }
 
 variable "instance_names" {
@@ -8,10 +8,10 @@ variable "instance_names" {
 
 resource "aws_instance" "one" {
   count                  = length(var.instance_names)
-  ami                    = "ami-02d7ced41dff52ebc"  # ✅ Ubuntu 22.04 LTS (eu-north-1)
+  ami                    = "ami-005b1eaf15c2e3e20"  # ✅ Ubuntu 22.04 LTS (eu-north-1)
   instance_type          = "t3.micro"
-  key_name               = "vkeypair"
-  vpc_security_group_ids = ["sg-04b843707185bd55e "]
+  key_name               = "jenkins"
+  vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"]
 
   tags = {
     Name = var.instance_names[count.index]
