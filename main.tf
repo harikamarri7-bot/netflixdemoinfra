@@ -1,13 +1,13 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-north-1"
 }
 
 resource "aws_instance" "one" {
   count                  = 4
-  ami                    = "ami-0360c520857e3138f"
+  ami                    = "ami-0a716d3f3b16d290c"
   instance_type          = "t2.medium"
   key_name               = "Netflix"
-  vpc_security_group_ids = ["sg-0ead21b7862e54f9a"]
+  vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"]
   tags = {
     Name = var.instance_names[count.index]
   }
