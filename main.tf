@@ -8,7 +8,7 @@ variable "instance_names" {
 
 resource "aws_instance" "one" {
   count                  = length(var.instance_names)
-  ami                    = "ami-05b5a865c3579bbc7"  # ✅ Ubuntu 22.04 LTS - eu-north-1
+  ami                    = "ami-0c3ce2eb930b737ba-"  # ✅ Ubuntu 22.04 LTS - eu-north-1
   instance_type          = "t3.micro"
   key_name               = "jenkins"
   vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"]
