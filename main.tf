@@ -10,7 +10,7 @@ resource "aws_instance" "one" {
   count                  = length(var.instance_names)
   ami                    = "ami-0a716d3f3b16d290c"  # ✅ Ubuntu 22.04 LTS (eu-north-1)
   instance_type          = "t3.medium"
-  key_name               = "jenkins"
+  key_name               = "slave1"
   vpc_security_group_ids = ["sg-07497a48ddb5a2d1f"]
 
   tags = {
