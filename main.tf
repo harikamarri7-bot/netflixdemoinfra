@@ -6,7 +6,7 @@ variable "instance_names" {
   default = ["jenkins", "tomcat-1", "tomcat-2", "monitoring-server"]
 }
 
-resource "aws_instance" "one" {
+resource "aws_instance" "two" {
   count                  = length(var.instance_names)
   ami                    = "ami-005b1eaf15c2e3e20"  # ✅ Ubuntu 22.04 LTS (eu-north-1)
   instance_type          = "t3.medium"
