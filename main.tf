@@ -9,7 +9,7 @@ variable "instance_names" {
 
 resource "aws_instance" "one" {
   count                  = length(var.instance_names)
-  ami                    = "ami-084c439053ca68d5a"
+  ami                    = "ami-01fd6fa49060e89a6"
   instance_type          = "t3.micro"
   key_name               = "vkeypair"
   vpc_security_group_ids = ["sg-09cdaab8b5f8a0a95"]
